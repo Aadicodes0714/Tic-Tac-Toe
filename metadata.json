@@ -1,0 +1,6 @@
+{
+  "name": "PULSE 3X3 — Modern Tic-Tac-Toe",
+  "description": "Futuristic neon Tic-Tac-Toe with smart Minimax AI, laser strike animations, sound effects, and smooth auto-restart.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

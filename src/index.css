@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+* {
+  font-family: 'Outfit', sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: radial-gradient(circle at 50% 20%, #161f38 0%, #080c17 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #f1f5f9;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.35);
+}
+
+.glow-rose {
+  box-shadow: 0 0 50px -10px rgba(244, 63, 94, 0.35);
+}
+
+/* Cell Styles */
+.cell-btn {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cell-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+.cell-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* SVG Stroke Animations */
+.draw-x-1 {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: drawStroke 0.35s ease-out forwards;
+}
+
+.draw-x-2 {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: drawStroke 0.35s ease-out 0.15s forwards;
+}
+
+.draw-o {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: drawStroke 0.45s ease-out forwards;
+}
+
+@keyframes drawStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Winning laser strike animation */
+.strike-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawLaser 0.45s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor);
+}
+
+@keyframes drawLaser {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Auto-restart Progress Bar */
+@keyframes progressCountdown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-progress-25 {
+  animation: progressCountdown 2.5s linear forwards;
+}
